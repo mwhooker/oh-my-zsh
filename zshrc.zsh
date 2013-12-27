@@ -5,7 +5,7 @@ ZSH=$HOME/dev/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="random"
+ZSH_THEME="muse"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -36,30 +36,44 @@ ZSH_THEME="random"
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(systemadmin go history last-working-dir lein ssh-agent urltools colored-man git vi-mode virtualenv rbenv)
 
-source $ZSH/oh-my-zsh.sh
+unsetopt ALL_EXPORT
 
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export HISTFILE=$HOME/.zhistory
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export EDITOR=vim
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export PATH="/sbin:/usr/sbin:${PATH}"
 
+if [ -f "${HOME}/Library/Haskell/bin" ]; then
+    export PATH="${PATH}:${HOME}/Library/Haskell/bin"
+fi
+
+# fix ssh sign useing the key
+# https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/201786
+export SSH_AUTH_SOCK=0
+
+#xcode 4 bullshit -
+#http://stackoverflow.com/questions/5944332/broken-pipe-error-when-using-pip-to-install-pycrypto-on-mac-os-x
+export ARCHFLAGS='-arch i386 -arch x86_64'
+
+export DISPLAY=:0
+export HOSTNAME="`hostname`"
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+export LC_CTYPE=C
+export PAGER='less'
+export TZ="America/Los_Angeles"
+
+
+source $ZSH/oh-my-zsh.sh
