@@ -74,6 +74,7 @@ export LC_ALL='en_US.UTF-8'
 export LC_CTYPE=C
 export PAGER='less'
 export TZ="America/Los_Angeles"
-
+bindkey '^r' history-incremental-search-backward
+export ENABLE_CORRECTION=true
 
 source $ZSH/oh-my-zsh.sh
