@@ -74,7 +74,8 @@ export LC_ALL='en_US.UTF-8'
 export LC_CTYPE=C
 export PAGER='less'
 export TZ="America/Los_Angeles"
-bindkey '^r' history-incremental-search-backward
 export ENABLE_CORRECTION=true
 
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
 source $ZSH/oh-my-zsh.sh
