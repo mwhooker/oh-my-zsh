@@ -41,13 +41,13 @@ HIST_STAMPS="mm/dd/yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(systemadmin go history last-working-dir lein ssh-agent urltools colored-man git vi-mode virtualenv rbenv)
+plugins=(bundler systemadmin go history last-working-dir lein ssh-agent urltools colored-man git vi-mode virtualenv rbenv)
 
 unsetopt ALL_EXPORT
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$HOME/bin:/usr/local/bin:$PATH
 
 export HISTFILE=$HOME/.zhistory
 
@@ -78,4 +78,7 @@ export ENABLE_CORRECTION=true
 
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
+
+alias crontab=”VIM_CRONTAB=true crontab”
+
 source $ZSH/oh-my-zsh.sh
