@@ -47,7 +47,9 @@ unsetopt ALL_EXPORT
 
 # User configuration
 
-export PATH=$HOME/.rbenv/bin:$HOME/bin:/usr/local/bin:$PATH
+export GOPATH=$HOME/.go
+export GOROOT=/usr/local/go
+export PATH=$GOPATH/bin:$HOME/.rbenv/bin:$HOME/bin:/usr/local/bin:$PATH
 
 export HISTFILE=$HOME/.zhistory
 
