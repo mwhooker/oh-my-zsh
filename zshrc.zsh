@@ -33,7 +33,7 @@ ZSH_THEME="muse"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 export HIST_STAMPS="mm/dd/yyyy"
@@ -87,10 +87,9 @@ export LC_CTYPE=C
 export PAGER='less'
 export TZ="America/Los_Angeles"
 export ENABLE_CORRECTION=true
+export VIM_CRONTAB=true
 
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
-
-alias crontab=”VIM_CRONTAB=true crontab”
 
 source $ZSH/oh-my-zsh.sh
