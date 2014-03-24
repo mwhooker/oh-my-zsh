@@ -1,11 +1,13 @@
 locals.zsh
 log/.zsh_history
 projects.zsh
-custom/*
-!custom/oldzsh.zsh
-!custom/oldzsh
-!custom/example
+custom
+!custom/plugins/example
 !custom/example.zsh
 *.swp
 !custom/example.zshcache
 cache/
+
+
+!custom/oldzsh.zsh
+!custom/oldzsh
